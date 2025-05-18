@@ -125,4 +125,16 @@ sections.forEach((section, i) => {
 });
 updateDots(0);
 
+
+
+
+document.querySelectorAll('.background-blur').forEach(div => {
+  const bg = div.style.backgroundImage.match(/\((.*?)\)/)[1].replace(/['"]/g, '');
+  const img = new Image();
+  img.src = bg;
+  img.onload = () => {
+    div.classList.add('loaded');
+  }
+});
+
 // Page created by Nelson Dominguez Martinez - 2025
